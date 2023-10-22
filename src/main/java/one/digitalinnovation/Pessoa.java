@@ -1,19 +1,19 @@
 package one.digitalinnovation;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Pessoa {
-    private String nome;
-    private LocalDateTime nascimento;
+    private final String nome;
+    private LocalDate nascimento;
 
-    public Pessoa(String nome, LocalDateTime nascimento) {
+    public Pessoa(String nome, LocalDate nascimento) {
         this.nome = nome;
         this.nascimento = nascimento;
     }
 
     public int getIdade() {
-        return (int) ChronoUnit.YEARS.between(nascimento,LocalDateTime.now());
+        return (int) ChronoUnit.YEARS.between(nascimento,LocalDate.now());
     }
     public boolean ehMaiorDeIdade(){
         return getIdade()>=18;
